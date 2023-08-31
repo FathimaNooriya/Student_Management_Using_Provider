@@ -132,7 +132,13 @@ class _add_student_pageState extends State<add_student_page> {
                             borderSide: BorderSide(
                                 color: Color.fromARGB(255, 255, 255, 255)),
                             borderRadius: BorderRadius.circular(15))),
-                    validator: (value) {},
+                    validator: (value) {
+                      if (nameController.text == "") {
+                        return "Enter your Name";
+                      } else {
+                        return null;
+                      }
+                    },
                   ),
                 ),
                 Row(
@@ -370,7 +376,7 @@ class _add_student_pageState extends State<add_student_page> {
         stclass: int.parse(classController.text.trim()),
         adress: adressController.text.trim(),
         image: image1!.path);
-   StudentProvider().addStudent(_student);
+    StudentProvider().addStudent(_student);
   }
 
   Future<void> editStudent(int index) async {

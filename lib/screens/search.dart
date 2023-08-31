@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:stulast/database/db_functions/db_functions.dart';
-import 'package:stulast/database/db_model/db_model.dart';
 import 'package:stulast/screens/student_dtails.dart';
 import 'package:provider/provider.dart';
 
@@ -20,9 +19,6 @@ class searchStudents extends SearchDelegate {
           },
           icon: Icon(Icons.close_rounded))
     ];
-
-    // TODO: implement buildActions
-    // throw UnimplementedError();
   }
 
   @override
@@ -32,9 +28,6 @@ class searchStudents extends SearchDelegate {
           close(context, null);
         },
         icon: Icon(Icons.arrow_back));
-
-    // TODO: implement buildLeading
-    //   throw UnimplementedError();
   }
 
   @override
@@ -79,7 +72,7 @@ class searchStudents extends SearchDelegate {
                   ],
                 );
               } else {
-                return Text("No");
+                return Card(child: Text("Not Fount"));
               }
             },
           ),
@@ -88,8 +81,6 @@ class searchStudents extends SearchDelegate {
         // );
       },
     );
-    // TODO: implement buildResults
-    //  throw UnimplementedError();
   }
 
   @override
@@ -133,14 +124,11 @@ class searchStudents extends SearchDelegate {
                 ],
               );
             } else {
-              return Container();
+              return Card(child: Text("Not Fount"));
             }
           },
         ));
       },
     );
-
-    // TODO: implement buildSuggestions
-    // throw UnimplementedError();
   }
 }
